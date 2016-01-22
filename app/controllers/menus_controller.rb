@@ -11,7 +11,17 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new params[:menu]
     if @menu.save
-      redirect_to root_path
+      respond_to do |format|
+        format.html {
+          if request.xhr?
+            render(@menu, layout: false)
+          else
+            redirect_to root_path
+          end
+        }
+        format.json { render json: @menu }
+      end
+
     else
       @menus = Menu.all
       render :index
