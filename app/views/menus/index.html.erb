@@ -7,7 +7,7 @@
 </div>
 <%= link_to "New Menu", "#", :class => 'new-menu' %>
 
-<%= form_for @menu, :html => {:class => 'hidden'} do |f| %>
+<%= form_for @menu, :html => {:class => 'hidden'}, remote: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>

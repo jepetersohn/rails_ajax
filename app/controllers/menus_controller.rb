@@ -18,6 +18,7 @@ class MenusController < ApplicationController
         format.json do
           render json: @menu
         end
+        format.js
       end
     else
       @menus = Menu.all
