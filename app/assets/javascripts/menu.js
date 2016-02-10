@@ -12,7 +12,10 @@ $(document).ready(function() {
       data: $(form).serialize(),
       dataType: 'html'
     }).done(function(response) {
-      // element = "<li class='list-group-item'><a href='/menu/" + response.id + "'>" + response.name + "</a></li>";
+      // var element = "<li class='list-group-item'><a href='/menu/" + response.id + "'>" + response.name + "</a></li>";
+      // $('ul.menus.list-group').append(element);
+      // $('#new_menu input[type=text]').val('');
+      // $('#new_menu').toggleClass('hidden');
       $('ul.menus.list-group').append(response);
       $('#new_menu input[type=text]').val('');
       $('#new_menu').toggleClass('hidden');
