@@ -11,6 +11,7 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(params[:menu])
     if @menu.save
+      flash[:success] = "menu item created!"
       respond_to do |format|
         format.html do
           request.xhr? ? render(@menu, layout: false) : redirect_to(root_path)
